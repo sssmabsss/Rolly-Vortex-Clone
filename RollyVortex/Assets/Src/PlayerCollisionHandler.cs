@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
-    public int SectionsTraversed = 0; 
+    public int SectionsTraversed = 0;
+    public ParticleSystem PS;
+    public PipeEngine PE;
+
+    private IEnumerator coroutine;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Obstacle"))
         {
-            Debug.Log("omae wa mou shindeiru");
-            SceneManager.LoadScene(0);
-        }
+            PE.Speed = 0;
+            PS.Play(); 
+        }   
     }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PipeSection"))
+
+
+        if (other.CompareTag("PipeSection"))
         {
+
             ++SectionsTraversed;
+           
         }
     }
 
