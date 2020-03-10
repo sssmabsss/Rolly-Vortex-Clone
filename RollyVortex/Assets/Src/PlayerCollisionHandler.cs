@@ -7,6 +7,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     public int SectionsTraversed = 0;
     public ParticleSystem PS;
     public PipeEngine PE;
+    public GameObject Panel;
 
     private IEnumerator coroutine;
 
@@ -15,8 +16,8 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (collision.transform.CompareTag("Obstacle"))
         {
             PE.Speed = 0;
-            PS.Play(); 
-        }   
+            PS.Play();
+            SceneManager.LoadScene(0);        }   
     }
 
 

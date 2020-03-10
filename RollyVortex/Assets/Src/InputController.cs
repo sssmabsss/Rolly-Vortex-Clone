@@ -25,4 +25,10 @@ public class InputController : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
         StartReceiver.OnGameStart();
     }
+
+    public void onClickPlay()
+    {
+          StartReceiver.OnGameStart();
+
+    }
 }

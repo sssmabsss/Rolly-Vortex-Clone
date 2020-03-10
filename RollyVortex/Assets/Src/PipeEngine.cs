@@ -13,17 +13,22 @@ public class PipeEngine : MonoBehaviour
 
     public PipeGenerator Generator = null;
 
-    private bool _isIdle = true;
+    public bool _isIdle = true;
+
+    public GameObject startButtonPanel;
 
     private void Start()
     {
         _isIdle = true;
+        startButtonPanel.SetActive(true);
+
     }
 
     public void OnGameStart()
     {
         if (_isIdle)
         {
+            startButtonPanel.SetActive(false);
             _isIdle = false;
         }
     }
